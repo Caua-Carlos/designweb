@@ -1,11 +1,9 @@
-/**    Especificando as fontes */
 $font-titulo : "Raleway",
 sans-serif;
 $font-texto : "IBM Plex Mono",
 monospace;
 
-/**    Especificando cores */
-$cor-bg-body: #1B1B1B;
+$cor-bg-body: #000000;
 $cor-bg-button: #3F8E00;
 $cor-text-title: #FFFFFF;
 $cor-text-body: #9C9C9C;
@@ -19,11 +17,6 @@ body {
     line-height: 160%;
 }
 
-.header {
-    .menu-navegacao {}
-
-    .menu-social {}
-}
 
 main {
     .perfil {
@@ -49,14 +42,19 @@ main {
             background: $cor-border-button;
             box-shadow: 0 8px 30px 0 rgba($cor-bg-button, 0.50);
         }
-    }
+    }}
 
-    .foto {}
+
+a{
+    color: #9C9C9C;
+    text-decoration: none;
 }
-
-.job-list {}
-
-.lista-sem-estilo {
-    padding: 0;
-    list-style: none;
+a:hover{
+    color: white;
+}
+.header{
+    background-color: #181717;
+}
+nav{
+    padding: 20px;
 }

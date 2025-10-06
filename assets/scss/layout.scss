@@ -1,7 +1,3 @@
-/**
-regras de break points
-*/
-
 $break-desktop: 1200px;
 $break-tablet: 900px;
 $break-mobile: 768px;
@@ -39,5 +35,60 @@ $break-watch: 400px;
 }
 
 .dividir-extremidades{
+    display: flex;
     justify-content: space-between;
 }
+.menu-navegacao {
+  display: flex;
+  gap: 30px; 
+  
+}
+
+.menu-social {
+  display: flex;
+  gap: 15px; 
+}
+.last-jobs ul {
+  display: flex;
+  justify-content: space-around; 
+  align-items: center;                                       
+}
+
+.perfil-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;      
+  gap: 20px;
+  width: 100%;          
+}
+.menu-navegacao,
+.menu-social,
+.last-jobs ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 20px; 
+}
+
+.perfil-container {
+  display: flex;            
+  justify-content: space-between; 
+  align-items: center;       
+  flex-wrap: wrap;           
+  gap: 20px;                
+}
+
+.perfil {
+  flex: 1;                  
+  min-width: 250px;          
+}
+
+.foto img {
+  max-width: 500px;          
+  width: auto;              
+  height: auto;
+  border-radius: 50%;
+}
+
