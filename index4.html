@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+<body>
+    <div x-data="{ ativo: false }">
+  
+  <button 
+    @click="ativo = !ativo"
+    class="transition-all duration-300 p-4"
+    :class="{ 
+      'bg-green-500 text-white': ativo,
+      'bg-gray-200 text-gray-500': !ativo 
+    }">
+    
+    Clique para Ativar
+    
+  </button>
+
+</div>
+<!-- JEITO 1: x-show (CSS Toggle) -->
+<div x-show="aberto">
+  Estou aqui, só invisível!
+</div>
+
+<!-- JEITO 2: x-if (DOM Removal) -->
+<!-- Obrigatório usar <template> -->
+<template x-if="logado">
+  <div>
+     Painel Admin (Só existe se logado)
+  </div>
+</template>
+<div x-data="{ open: false }">
+
+  <!-- Fecha se apertar ESC -->
+  <div @keydown.escape.window="open = false">
+  
+    <button @click="open = true">Abrir</button>
+
+    <!-- Fecha se clicar fora -->
+    <div x-show="open" 
+         @click.outside="open = false">
+       Sou um Modal!
+    </div>
+    
+  </div>
+
+</div>
+</body>
+</html>
