@@ -3,16 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exércicio 14</title>
+    <title>Exércicio 15</title>
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </head>
 <body>
-        <div x-data="{liked : false}">
-            <button @click="liked = !liked">  
+    <div x-data="{liked : false, count : 0}">
+                <button @click="count++">+</button> 
+                <span x-text="count"></span>
+                <button @click="liked = !liked">  
                 <span x-show="!liked">❤️</span>
                 <span x-show="liked">🤍</span>
-            </button>
+                 </button>
+                <button @click="count--">-</button> 
         </div>
-    
 </body>
 </html>
