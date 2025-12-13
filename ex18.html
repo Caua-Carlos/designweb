@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exércicio 18</title>
+     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <div x-data="{mostrar : false}">
+        <p>kaksasjasajamsajasasjasnanxjanxajxamsjaasmasjasmajas </p> 
+        <span x-show="mostrar">akaksajaasmjanaisanonsaias</span>
+        <button @click="mostrar =!mostrar"><span x-text="mostrar ? 'Ler menos' : 'Ler mais'"></span></button>
+        
+    </div>
+    
+</body>
+</html>
