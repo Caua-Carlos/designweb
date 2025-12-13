@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exércicio 16</title>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+<body>
+    <div x-data="{tab : 1}">
+        <button @click="tab = 1">tab 1</button>
+        <button @click="tab = 2">tab 2</button>
+        <button @click="tab = 3">tab 3</button>
+    
+
+        <div x-show="tab === 1">Conteúdo da tab 1</div>
+        <div x-show="tab === 2">Conteúdo da tab 2</div>
+        <div x-show="tab === 3">Conteúdo da tab 3</div>
+    </div>
+</body>
+</html>
