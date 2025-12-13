@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exércicio 19</title>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <div x-data="{ index : 0, conteudos : ['verde', 'amarelo', 'vermelho'], cores : ['text-green-500', 'text-yellow-500', 'text-red-500']}" class="text-center m-5">
+        <button @click="index = (index + 1) % conteudos.length" class=" border-black border-2 p-6 rounded-2xl">Mudar</button>
+        <p :class="cores[index] " x-text=" conteudos[index]" class="font-bold text-xl m-5"></p>
+    </div>
+</body>
+</html>
