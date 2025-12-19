@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Calculadora Freelancer</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+<body class="min-h-screen flex items-center justify-center">
+  <div 
+    x-data="{
+      servicos: [],
+      nome: '',
+      valor: 0,
+      adicionar() {
+        if (this.nome && this.valor > 0) {
+          this.servicos.push({
+            nome: this.nome,
+            valor: this.valor
+          })
+          this.nome = ''
+          this.valor = 0
+        }
+      },
+
+      get total() {
+        return this.servicos.reduce((soma, item) => soma + item.valor, 0)
+      }
+    }"
+    class="bg-white w-full max-w-sm rounded-xl shadow-lg p-6 space-y-4"
+  >
+    <div class="flex items-center gap-2">
+      <div class="bg-green-100 text-green-600 rounded-full p-3 font-bold">$</div>
+      <h2 class="font-semibold text-lg">Orçamento #001</h2>
+    </div>
+
+    <div class="grid grid-cols-2 gap-2">
+      <input 
+        type="text"
+        x-model="nome"
+        class="border rounded px-3 py-2 text-sm"
+      >
+
+      <input 
+        type="number"
+        x-model.number="valor"
+        class="border rounded px-3 py-2 text-sm"
+      >
+    </div>
+
+    <button @click="adicionar" class="w-full bg-blue-600 text-white rounded py-2 text-sm ">
+      Adicionar
+    </button>
+
+    <div class="space-y-2">
+      <template x-for="(item, index) in servicos" :key="index">
+        <div class="flex justify-between bg-gray-50 rounded px-3 py-2 text-sm">
+          <span x-text="item.nome"></span>
+          <span class="font-medium">
+            R$ <span x-text="item.valor.toLocaleString('pt-BR')"></span>
+          </span>
+        </div>
+      </template>
+    </div>
+    <div class="flex justify-between items-center bg-slate-800 text-white rounded-lg px-4 py-3">
+      <span class="font-semibold">TOTAL</span>
+      <span class="text-green-400 font-bold text-lg">
+        R$ <span x-text="total.toLocaleString('pt-BR')"></span>
+      </span>
+    </div>
+
+  </div>
+
+</body>
+</html>
