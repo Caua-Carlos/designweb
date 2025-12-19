@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     <script src="https://cdn.tailwindcss.com"></script>
+     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+<body>
+   <div x-data="{skill: '', skills: [], adicionar(){
+    if (this.skill !==''){
+        this.skills.push(this.skill)
+        this.skill = ''
+    }
+   },
+   remover(removerSkill){
+    this.skills = this.skills.filter(skill => skill !== removerSkill)
+   }
+    }">
+
+    <h1 class="font-bold text-3xl">Minhas Skills:</h1>
+
+    <input class=" border-2 rounded-lg p-2" placeholder="Nova skill..." x-model="skill"> 
+
+    <button class="bg-fuchsia-700 p-2 rounded-xl font-bold text-gray-100" @click="adicionar">Add</button>
+    <div class="flex flex-wrap gap-3">
+    <template x-for="skill in skills" :key="skill">
+        <div class="inline-flex  gap-3 bg-fuchsia-100 text-fuchsia-800 rounded-xl p-3 font-bold">
+        <p x-text="skill" ></p>
+        <button @click="remover(skill)" class="hover:text-red-500 font-light">X</button>
+            </div>
+    </template>
+    </div>
+
+   </div>
+</body>
+</html>
