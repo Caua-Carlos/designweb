@@ -7,10 +7,10 @@
      <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </head>
 <body>
-  <div x-data="{nome: ''}" class="bg-gray-200 flex flex-col items-center gap-3 border-2 border-gray-300" >
+  <div x-data="{nome: ''}" class="bg-gray-100 flex flex-col items-center gap-3 border-2 border-gray-300" >
     <p class="font-bold text-gray-500 ">Teste aqui</p>
     <input x-type="text" x-model="nome" placeholder="Digite seu nome..." class="p-5 rounded-lg border-1 font-semibold"></input>
-    <p>Olá, <span x-text="nome"></span></p>
+    <p>Olá,<span x-text="nome"></span></p>
 
   </div>
   
