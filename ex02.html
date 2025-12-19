@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <script src="https://cdn.tailwindcss.com"></script>
+     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+<body>
+        <div x-data="{novoNome: '', nomes: [], adicionar(){
+            if (this.novoNome !== ''){
+                this.nomes.push(this.novoNome)
+                this.novoNome = ''
+            }
+        }, 
+        
+        remover(index) {
+            this.nomes.splice(index, 1)
+        }
+        }" >
+        <h1 class="font-bold text-3xl m-3">Aula de campo</h1> 
+        <input class="border-2 rounded-lg p-3 m-3" placeholder="O que vamos fazer hoje?" x-model="novoNome"> <button class="bg-blue-600 text-gray-100 rounded-lg p-3" @click="adicionar">+</button>
+        <div>
+            <template x-for="(nome, index) in nomes">
+                <div class=" flex bg-gray-200 p-4 rounded-2xl justify-between">
+                <span x-text="nome"></span> <button @click="remover(index)" class="text-red-500">Remover</button>
+                </div>
+            </template>
+        </div>
+
+        </div>
+    
+
+</body>
+</html>
